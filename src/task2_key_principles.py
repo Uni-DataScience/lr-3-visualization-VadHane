@@ -11,8 +11,14 @@ def create_scatter_plot(data):
     Parameters:
     data (DataFrame): A DataFrame containing 'x' and 'y' columns.
     """
-    fig, _ = plt.subplots()
-    pass
+    # Create a scatter plot using Seaborn
+    fig, ax = plt.subplots()
+    sns.scatterplot(x='x', y='y', data=data, ax=ax)
+    
+    ax.set_xlabel('X-axis')
+    ax.set_ylabel('Y-axis')
+    ax.set_title('Scatter Plot')
+
     return fig
 
 
