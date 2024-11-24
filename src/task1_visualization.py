@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import collections
+from collections import Counter
 
 
 def plot_distribution(data):
@@ -11,8 +12,21 @@ def plot_distribution(data):
     data (array-like): An array of categorical data items.
     """
     
-    fig, _ = plt.subplots()
-    pass
+    # Count the occurrences of each category
+    count = Counter(data)
+    
+    # Separate the categories and their counts
+    categories = list(count.keys())
+    counts = list(count.values())
+    
+    # Create a bar plot
+    fig, ax = plt.subplots()
+    ax.bar(categories, counts)
+    
+    ax.set_xlabel('Category')
+    ax.set_ylabel('Count')
+    ax.set_title('Category Distribution')
+    
     return fig
 
 
